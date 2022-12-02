@@ -9,7 +9,8 @@ const TrackingCard = (props: any) => {
   return (
     <div>
       <div>
-        <h1> Loan Application Details </h1>
+        <h1> Mock Bank UI </h1>
+        <h2> Loan Applications </h2>
         <table>
           <tbody>
             <tr>
@@ -47,7 +48,6 @@ const TrackingCard = (props: any) => {
           onClick={() => {
             Axios({
               method: "POST",
-             //. url: `http://localhost:3004/applications/review/${props.loanApplication.order_id}`,
               url: `http://64.227.181.5:3010/applications/review/${props.loanApplication.order_id}`,
               // withCredentials: true,
               data: {
