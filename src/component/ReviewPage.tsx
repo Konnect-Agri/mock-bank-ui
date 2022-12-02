@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Axios from "axios";
 import { JsonToTable } from "react-json-to-table";
 import { Table, Form, Container, Button } from "react-bootstrap";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { map } from "lodash";
 
 const ReviewPage = (props: any) => {
@@ -197,18 +197,16 @@ const ReviewPage = (props: any) => {
     []
   );
 
-
-
   useEffect(() => {
-    if (!localStorage.getItem('token')) {
-      navigateTo('/')
+    if (!localStorage.getItem("token")) {
+      navigateTo("/");
     }
   }, []);
 
   useEffect(() => {
     Axios({
       //  url: `http://localhost:3004/applications/${orderId}`,
-      url: `http://64.227.181.5:3010/applications/${orderId}`,
+      url: `http://localhost:3004/applications/${orderId}`,
       method: "GET",
     }).then((res) => {
       console.log(res.data.data.loan_applications);
@@ -216,10 +214,8 @@ const ReviewPage = (props: any) => {
     });
   }, []);
 
-
   return (
     <div className="flex flex-col justify-center items-center min-h-screen">
-
       <div className="min-w-2/5 font-regular bg-white bg-opacity-70 rounded mb-16 mt-16">
         <Container>
           <Table bordered>
@@ -320,35 +316,39 @@ const ReviewPage = (props: any) => {
             <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Review</Form.Label>
-                <Form.Control type="text"
+                <Form.Control
+                  type="text"
                   id="review"
                   name="review"
-                  onChange={(e) => setReview(e.target.value)} />
-
+                  onChange={(e) => setReview(e.target.value)}
+                />
               </Form.Group>
             </Form>
-
           </div>
           <div className="d-grid gap-2">
-            <Button variant="primary" size="lg" type="submit" onClick={(e) => {
-              const payload = {
-                review: review,
-                status: status,
-                update_targets: updateTargets,
-              };
-              Axios({
-                method: "POST",
-                //url: `http://localhost:3004/applications/review/${orderId}`,
-                url: `http://64.227.181.5:3010/applications/review/${orderId}`,
-                data: payload,
-              }).then((res) => {
-                alert(res.data);
-              });
-            }}>
+            <Button
+              variant="primary"
+              size="lg"
+              type="submit"
+              onClick={(e) => {
+                const payload = {
+                  review: review,
+                  status: status,
+                  update_targets: updateTargets,
+                };
+                Axios({
+                  method: "POST",
+                  //url: `http://localhost:3004/applications/review/${orderId}`,
+                  url: `http://localhost:3004/applications/review/${orderId}`,
+                  data: payload,
+                }).then((res) => {
+                  alert(res.data);
+                });
+              }}
+            >
               Submit Review
             </Button>
           </div>
-
         </div>
       </div>
     </div>
