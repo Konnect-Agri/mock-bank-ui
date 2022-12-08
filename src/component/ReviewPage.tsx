@@ -206,7 +206,7 @@ const ReviewPage = (props: any) => {
   useEffect(() => {
     Axios({
       //  url: `http://localhost:3004/applications/${orderId}`,
-      url: `http://localhost:3004/applications/${orderId}`,
+      url: `https://api.bank.konnect.samagra.io/applications/${orderId}`,
       method: "GET",
     }).then((res) => {
       console.log(res.data.data.loan_applications);
@@ -339,7 +339,7 @@ const ReviewPage = (props: any) => {
                 Axios({
                   method: "POST",
                   //url: `http://localhost:3004/applications/review/${orderId}`,
-                  url: `http://localhost:3004/applications/review/${orderId}`,
+                  url: `https://api.bank.konnect.samagra.io/applications/review/${orderId}`,
                   data: payload,
                 }).then((res) => {
                   alert(res.data);

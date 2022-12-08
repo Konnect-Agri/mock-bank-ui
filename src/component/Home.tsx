@@ -15,7 +15,7 @@ const Home = (props: any) => {
   useEffect(() => {
     Axios({
       // url: "http://localhost:3004/track",
-      url: "http://localhost:3004/track",
+      url: "https://api.bank.konnect.samagra.io/track",
       method: "GET",
     }).then((res) => {
       console.log(res.data.data.order_tracking_details);
