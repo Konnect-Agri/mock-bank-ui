@@ -2,10 +2,11 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import Axios from "axios";
 import { JsonToTable } from "react-json-to-table";
-import { Table, Form, Container, Button } from "react-bootstrap";
+import { Table, Form, Container, Button, Col, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { map } from "lodash";
-
+import  './review-page.css';
+import BreadCrums from "./BreadCrums";
 const ReviewPage = (props: any) => {
   // application form states
   const { orderId } = useParams();
@@ -215,8 +216,13 @@ const ReviewPage = (props: any) => {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen">
-      <div className="min-w-2/5 font-regular bg-white bg-opacity-70 rounded mb-16 mt-16">
+    <>
+     <div className="container-fluid">
+      <BreadCrums items={["Application Status","Application Review"]} />
+      <div className="bg-white" style={{ minHeight: "80vh" ,borderRadius:'10px'}}>
+        <Container>
+        <div className="flex flex-col justify-center items-center min-h-screen">
+      <div className="min-w-2/5 font-regular bg-white bg-opacity-70 rounded  mt-16">
         <Container>
           <Table bordered>
             <tbody>
@@ -233,10 +239,11 @@ const ReviewPage = (props: any) => {
         <div>
           <JsonToTable json={loanApplication} />
         </div>
-        <div>
-          <div>
-            <label htmlFor="status"> Status </label>
-            <select
+        <div className=" mt-5 border p-3" >
+          <Row>
+            <Col> <label htmlFor="status"> Status </label></Col>
+            <Col> </Col>
+            <Col style={{textAlign:'end'}}><select
               id="status"
               name="status"
               onChange={(e) => {
@@ -250,20 +257,14 @@ const ReviewPage = (props: any) => {
                 Needs further clarification
               </option>
               <option value="Rejected"> Rejected </option>
-            </select>
+            </select></Col>
+          </Row>
+          <div>
+           <hr />
+            
           </div>
           <div>
-            <label htmlFor="updateFields"> Select Fields To Update </label>
-            <Table>
-              <thead>
-                <tr>
-                  <th> Field </th>
-                  <th> Should be updated? </th>
-                </tr>
-              </thead>
-            </Table>
-
-            <Table>
+            <Table striped>
               <thead>
                 <tr>
                   <th>Application Field</th>
@@ -352,6 +353,11 @@ const ReviewPage = (props: any) => {
         </div>
       </div>
     </div>
+        </Container>
+      </div>
+    </div>
+    
+    </>
   );
 };
 
