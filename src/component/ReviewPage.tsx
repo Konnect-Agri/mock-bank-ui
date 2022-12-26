@@ -210,7 +210,6 @@ const ReviewPage = (props: any) => {
       url: `https://api.bank.konnect.samagra.io/applications/${orderId}`,
       method: "GET",
     }).then((res) => {
-      console.log(res.data.data.loan_applications);
       setLoanApplication(res.data.data.loan_applications);
     });
   }, []);
@@ -246,8 +245,7 @@ const ReviewPage = (props: any) => {
             <Col style={{textAlign:'end'}}><select
               id="status"
               name="status"
-              onChange={(e) => {
-                console.log("status value on change: ", e.target.value);
+              onChange={(e) => { 
                 setStatus(e.target.value);
               }}
             >
@@ -293,8 +291,7 @@ const ReviewPage = (props: any) => {
                       >
                         <Form.Check
                           type="checkbox"
-                          onChange={(e) => {
-                            console.log("vvv hello:", { e });
+                          onChange={(e) => {  
                             if (e.target.checked) {
                               setUpdateTargets([...updateTargets, field.key]);
                             } else {

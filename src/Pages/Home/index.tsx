@@ -35,14 +35,6 @@ const Home = (props: any) => {
         </Container>
       </div>
     </div>
-    // <div className="flex flex-col justify-center items-center min-h-screen">
-    //   <div>
-    //     <h1 className="text-white text-4xl mb-4 font-bold text-center mt-16">
-    //       Loan Application Details
-    //     </h1>
-    
-    //   </div>
-    // </div>
   );
 };
 

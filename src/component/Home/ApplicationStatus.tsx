@@ -32,7 +32,7 @@ const ApplicationStatus: FC<PropType> = () => {
     },
     [downloadList]
   );
-  console.log("vbn:", { downloadList });
+
   return (
     <div style={{ padding: "50px" }}>
       <Table className="font-regular bg-white bg-opacity-70 rounded mb-16">

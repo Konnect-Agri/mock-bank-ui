@@ -15,7 +15,7 @@ const Header: FC = () => {
     state.user,
     state.resetUser,
   ]);
-  console.log("vbn:", { user });
+
   const navigateTo = useNavigate();
   const isLoggedIn = useMemo(() => !!user?.token, [user?.token]);
 

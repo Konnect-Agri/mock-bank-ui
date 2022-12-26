@@ -23,9 +23,8 @@ const Login: FC = () => {
                 Authorization: `HZmKaLCvHMJ36eChXdSpdT7IMqKXr-3rpldpCTmwBJxKFKDf-1h31QwN`
             }
         };
-        console.log("vbn:",{loginId,password})
+      
         axios.post(url, { loginId, password, applicationId: AapplicationId }, config).then(res => {
-            console.log("vbn:",{res})
             if(res?.data?.token){
                 localStorage.setItem('token',res?.data?.token);
                 localStorage.setItem('user',JSON.stringify(res?.data));
@@ -48,7 +47,6 @@ const Login: FC = () => {
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>User Name</Form.Label>
                                 <Form.Control type="text" placeholder="User Id" value={loginId} onChange={(e: any) => {
-                                    console.log(e.target.value)
                                     setLoginId(e.target.value)}} />
                                 <Form.Text className="text-muted">
                                     We'll never share your email with anyone else.
