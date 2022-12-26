@@ -6,7 +6,7 @@ import { Table, Form, Container, Button, Col, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { map } from "lodash";
 import  './review-page.css';
-import BreadCrums from "./BreadCrums";
+import BreadCrums from "./BreadCrums/BreadCrums";
 const ReviewPage = (props: any) => {
   // application form states
   const { orderId } = useParams();
