@@ -1,13 +1,13 @@
 import "./index.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home/Home";
-import ReviewPage from "./Component/ReviewPage";
-import Header from "./Component/Header";
-import Login from "./Component/Login";
+import ReviewPage from "./component/ReviewPage";
+import Header from "./component/Header";
+import Login from "./component/Login";
 
 import { Toaster } from "react-hot-toast";
 import { Col, Row } from "react-bootstrap";
-import Sidebar from "./Component/Sidebar/Sidebar";
+import Sidebar from "./component/Sidebar/Sidebar";
 import { useEffect } from "react";
 import { useZustandStore } from "./store";
 

@@ -1,9 +1,9 @@
 import  { useState, useEffect, useCallback, useMemo } from "react";
 import {  Container} from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import BreadCrums from "../../Component/BreadCrums/BreadCrums";
-import ApplicationHeader from "../../Component/Home/ApplicationHeader";
-import ApplicationStatus from "../../Component/Home/ApplicationStatus";
+import BreadCrums from "../../component/BreadCrums/BreadCrums";
+import ApplicationHeader from "../../component/Home/ApplicationHeader";
+import ApplicationStatus from "../../component/Home/ApplicationStatus";
 
 
 const Home = (props: any) => {
