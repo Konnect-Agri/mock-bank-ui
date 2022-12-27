@@ -1,7 +1,6 @@
 import { FC, useMemo, useCallback } from "react";
 import { AiOutlineLogout } from "react-icons/ai";
-import { Container, Navbar, Nav, Form } from "react-bootstrap";
-import { LinkContainer } from "react-router-bootstrap";
+import {  Navbar, Nav, Form } from "react-bootstrap";
 import styled from "styled-components";
 import userLogo from "../assets/images/user-logo.png";
 import Image from "react-bootstrap/Image";
@@ -21,6 +20,7 @@ const Header: FC = () => {
 
   const onLogout = useCallback(() => {
     resetUser();
+    localStorage.clear();
     navigateTo("/");
   }, [resetUser]);
 
